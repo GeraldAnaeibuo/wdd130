@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #0b4f6c;
+    /* deep river blue */
+    --secondary-color: #f2f7f9;
+    /* mist white */
+    --accent1-color: #1d2d35;
+    /* dark slate */
+    --accent2-color: #f28c28;
+    /* life-jacket orange */
+    --heading-font: "Georgia", "Times New Roman", serif;
+    --body-font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background-color: var(--secondary-color);
+    line-height: 1.5;
+}
+
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+}
+
+header img {
+    display: block;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+header nav a {
+    display: block;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+header nav a:hover {
+    background-color: var(--accent2-color);
+    color: var(--accent1-color);
+}
+
+/* Hero with overlays */
+.hero {
+    position: relative;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.8;
+    background-color: var(--accent1-color);
+    color: #fff;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    width: 440px;
+    margin: 0;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-left: 6px solid var(--accent2-color);
+    border-radius: 4px;
+}
+
+.hero article p {
+    margin: 0;
+    padding: 0;
+}
+
+.hero article img {
+    float: right;
+    width: 125px;
+    margin: 0 0 8px 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+}
