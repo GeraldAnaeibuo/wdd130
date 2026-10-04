@@ -150,6 +150,7 @@ footer {
    so the contact page title resets that behavior. */
 .page-title {
     position: static;
+    width: auto;
     margin: 16px;
     opacity: 1;
 }
