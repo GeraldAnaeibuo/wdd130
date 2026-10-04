@@ -143,3 +143,127 @@ footer {
     height: 32px;
     margin-left: 8px;
 }
+
+/* ===== Contact page additions ===== */
+
+/* The global h1 rule positions the h1 over the hero image,
+   so the contact page title resets that behavior. */
+.page-title {
+    position: static;
+    margin: 16px;
+    opacity: 1;
+}
+
+.contact-info address {
+    font-style: normal;
+    margin: 16px;
+    padding: 8px;
+}
+
+.contact-info a,
+.contact-form a {
+    color: var(--primary-color);
+}
+
+.map {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 16px;
+    border: 0;
+}
+
+/* Employee profiles */
+.staff-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px;
+}
+
+.staff-grid figure {
+    text-align: center;
+}
+
+.staff-grid img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.staff-grid figcaption {
+    margin-top: 8px;
+}
+
+/* Contact form */
+.contact-form form {
+    max-width: 520px;
+    margin: 16px;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--accent1-color);
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--accent1-color);
+    font: inherit;
+}
+
+.contact-form fieldset {
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid var(--accent1-color);
+    border-radius: 4px;
+}
+
+.contact-form legend {
+    padding: 0 4px;
+    font-weight: bold;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.option input {
+    width: 20px;
+    height: 20px;
+}
+
+.submit-button {
+    margin-top: 16px;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    background-color: var(--accent2-color);
+    color: var(--accent1-color);
+}
