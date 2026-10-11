@@ -1,16 +1,20 @@
+
+/* =========================================
+   WILD OARS RIVER RAFTING
+   Shared stylesheet for all website pages
+   ========================================= */
+
+/* 1. Variables */
 :root {
     --primary-color: #0b4f6c;
-    /* deep river blue */
     --secondary-color: #f2f7f9;
-    /* mist white */
     --accent1-color: #1d2d35;
-    /* dark slate */
     --accent2-color: #f28c28;
-    /* life-jacket orange */
     --heading-font: "Georgia", "Times New Roman", serif;
     --body-font: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+/* 2. Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -21,93 +25,127 @@ body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: var(--secondary-color);
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
-header,
-main,
-footer {
-    width: 840px;
-    margin: 0 auto;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--heading-font);
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+h2 {
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+a {
     color: var(--primary-color);
 }
 
-nav,
-p,
+/* 3. Shared page layout */
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 16px;
+}
+
 section,
 article {
-    margin: 16px;
     padding: 8px;
 }
 
-/* Header */
+/* 4. Header and navigation */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--primary-color);
+    gap: 16px;
     padding: 8px 16px;
+    background-color: var(--primary-color);
 }
 
-header img {
+header > img {
     display: block;
+    width: 137px;
+    height: auto;
+    flex-shrink: 0;
 }
 
 header nav ul {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     list-style: none;
     gap: 8px;
 }
 
 header nav a {
     display: block;
-    padding: 8px 12px;
-    color: #fff;
+    padding: 10px 12px;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a:focus-visible,
+header nav a[aria-current="page"] {
     background-color: var(--accent2-color);
     color: var(--accent1-color);
 }
 
-/* Hero with overlays */
+/* 5. Hero section */
 .hero {
     position: relative;
+    margin: 0 0 24px;
+    padding: 0;
 }
 
-.hero img {
+.hero > img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-h1 {
+.hero h1 {
     position: absolute;
     top: 20px;
+    left: 0;
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.8;
-    background-color: var(--accent1-color);
-    color: #fff;
+    background-color: rgba(29, 45, 53, 0.88);
+    color: #ffffff;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .hero article {
     position: absolute;
     bottom: 16px;
     left: 16px;
-    width: 440px;
+    width: min(440px, calc(100% - 32px));
     margin: 0;
     padding: 12px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.94);
     border-left: 6px solid var(--accent2-color);
     border-radius: 4px;
 }
@@ -120,111 +158,88 @@ h1 {
 .hero article img {
     float: right;
     width: 125px;
+    height: auto;
     margin: 0 0 8px 12px;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-/* Footer */
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    width: 32px;
-    height: 32px;
-    margin-left: 8px;
-}
-
-/* ===== Contact page additions ===== */
-
-/* The global h1 rule positions the h1 over the hero image,
-   so the contact page title resets that behavior. */
+/* 6. Standard page titles */
 .page-title {
     position: static;
     width: auto;
-    margin: 16px;
-    opacity: 1;
-}
-
-.contact-info address {
-    font-style: normal;
-    margin: 16px;
-    padding: 8px;
-}
-
-.contact-info a,
-.contact-form a {
+    margin: 16px 0;
+    padding: 0;
+    background: none;
     color: var(--primary-color);
+    opacity: 1;
+    text-align: left;
+    font-size: 2rem;
 }
 
-.map {
-    display: block;
+/* 7. Homepage newsletter */
+.newsletter {
+    width: calc(100% - 32px);
+    max-width: 650px;
+    margin: 24px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #d5e1e5;
+    border-left: 6px solid var(--accent2-color);
+    border-radius: 8px;
+}
+
+.newsletter h2 {
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    margin-bottom: 16px;
+}
+
+.newsletter form {
     width: 100%;
-    max-width: 600px;
-    height: 300px;
-    margin: 16px;
-    border: 0;
-}
-
-/* Employee profiles */
-.staff-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 16px;
-}
-
-.staff-grid figure {
-    text-align: center;
-}
-
-.staff-grid img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-}
-
-.staff-grid figcaption {
-    margin-top: 8px;
-}
-
-/* Contact form */
-.contact-form form {
     max-width: 520px;
-    margin: 16px;
+    margin: 16px 0 0;
 }
 
+/* 8. Form fields */
 .field {
     margin-bottom: 16px;
 }
 
-.field label {
+.field label,
+.newsletter label {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
-.contact-form textarea {
+.contact-form textarea,
+.newsletter input[type="text"],
+.newsletter input[type="email"] {
+    display: block;
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid var(--accent1-color);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #ffffff;
     color: var(--accent1-color);
     font: inherit;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.newsletter input:focus-visible {
+    outline: 2px solid var(--accent2-color);
+    outline-offset: 2px;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
 }
 
 .contact-form fieldset {
@@ -251,20 +266,298 @@ footer {
     height: 20px;
 }
 
-.submit-button {
-    margin-top: 16px;
+/* 9. Buttons and links */
+.submit-button,
+.cta-link {
+    display: inline-block;
+    margin-top: 12px;
     padding: 12px 24px;
     border: 0;
     border-radius: 4px;
     background-color: var(--primary-color);
-    color: #fff;
+    color: #ffffff;
     font: inherit;
     font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
 }
 
 .submit-button:hover,
-.submit-button:focus {
+.submit-button:focus-visible,
+.cta-link:hover,
+.cta-link:focus-visible {
     background-color: var(--accent2-color);
     color: var(--accent1-color);
+}
+
+/* 10. Homepage content cards */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+    padding: 0;
+}
+
+.home-grid article {
+    min-width: 0;
+    margin: 0;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.home-grid article img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+.home-grid article p {
+    margin-bottom: 0;
+}
+
+/* 11. Call-to-action section */
+.call-to-action {
+    margin: 24px 0;
+    padding: 28px 24px;
+    text-align: center;
+    background-color: #e2edf1;
+    border-radius: 6px;
+}
+
+.call-to-action h2 {
+    margin-bottom: 12px;
+}
+
+.call-to-action p {
+    max-width: 750px;
+    margin: 0 auto 16px;
+}
+
+/* 12. Contact page */
+.contact-info address {
+    margin: 16px 0;
+    padding: 8px 0;
+    font-style: normal;
+}
+
+.contact-info a,
+.contact-form a {
+    color: var(--primary-color);
+}
+
+.map {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 16px 0;
+    border: 0;
+}
+
+/* 13. Staff profiles */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+    padding: 0;
+}
+
+.staff-grid figure {
+    min-width: 0;
+    text-align: center;
+}
+
+.staff-grid img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.staff-grid figcaption {
+    margin-top: 8px;
+}
+
+/* 14. Trips page cards */
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+    padding: 0;
+}
+
+.trip-grid article {
+    min-width: 0;
+    margin: 0;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.trip-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+/* 15. Trips comparison table */
+.trips-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.trips-table th,
+.trips-table td {
+    padding: 12px;
+    border: 1px solid #647782;
+    text-align: left;
+}
+
+.trips-table th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* 16. Footer and social media */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer p,
+footer p a {
+    color: #ffffff;
+}
+
+.socialmedia {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.socialmedia a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.socialmedia img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* 17. Tablet layout */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    .home-grid,
+    .trip-grid,
+    .staff-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero h1 {
+        top: 12px;
+        padding: 12px;
+        font-size: 1.6rem;
+    }
+
+    .hero article {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* 18. Mobile layout */
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    header nav ul {
+        gap: 4px;
+    }
+
+    header nav a {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .home-grid,
+    .trip-grid,
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .call-to-action {
+        padding: 22px 16px;
+    }
+
+    .hero h1 {
+        top: 8px;
+        padding: 8px;
+        font-size: 1.25rem;
+    }
+
+    .hero article img {
+        width: 100px;
+    }
+
+    .trips-table th,
+    .trips-table td {
+        padding: 8px;
+    }
 }
